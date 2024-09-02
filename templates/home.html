@@ -1,13 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Home</title>
+    <style>
+        h1 {
+            font-size: 40px;
+            text-align: center;
+            color: rgb(180, 50, 102);
+        }
+    </style>
 </head>
+
 <body>
     <h1>Jovian Careers</h1>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
     <img src="https://unsplash.com/photos/a-man-sitting-at-a-table-with-a-laptop-u5pAYGDWD54" alt="">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe fugit assumenda itaque recusandae consectetur.
+        Nesciunt ipsa qui mollitia corporis alias perferendis fugit sint molestiae autem voluptate nobis officia, nam
+        illum modi architecto quisquam aperiam a assumenda reprehenderit repudiandae voluptatibus corrupti vel nihil
+        voluptas? Ratione pariatur odit, eum alias, nemo perspiciatis, cumque architecto libero voluptas quis eius error
+        dignissimos dicta repellat!</p>
     <h2>You will know about job openings here</h2>
+    <h3>Open positions</h3>
+    <div class="row" style="margin-bottom: 20px;">
+        <div class="col-9">
+            {%for job in jobs%}
+            <div class="border-bottom" style=" padding: 10px;">
+                <h4 style="color: #414141;margin-bottom: 5px;">
+                    <div>{{job['title']}}</div>
+                </h4>
+                <div><b>Location:</b> {{job['location']}}</div>
+                <div><b>Salary:</b>{{job['salary']}}</div>
+                
+            </div>
+            
+        </div>
+        <div class="col-3"><button type="button" class="btn btn-outline-primary">Apply</button></div>
+    {%endfor%}
+    </div>
+    <button>Contact Us</button>
 </body>
+
 </html>
